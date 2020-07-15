@@ -22,14 +22,34 @@ function handleGet(){
 }
 
 function getCharacter(data){
-    var items  = data.results 
+   var items  = data.results 
+   var displayResult = document.getElementById('res')
+   displayResult.textContent = ""
    for(var i = 0 ; i < items.length ; i++){
-      console.log("Name:"+items[i].name) 
-      console.log("Air Date:"+items[i].air_date)
-      console.log("Episode:"+items[i].episode)
-      console.log("EpisodeCharacter:"+items[i].characters)
-      console.log("EpisodeURL:"+items[i].url)
-      
+      var card = document.createElement('div')
+      card.setAttribute('class','card')
+
+      var cardBody = document.createElement('div')
+      cardBody.setAttribute('class','card-body')
+
+      var namePara = document.createElement('p')
+      namePara.textContent = "Name:"+items[i].name
+
+      var DatePara = document.createElement('p')
+      DatePara.textContent = "Air Date:"+items[i].air_date
+
+      var episodeNumPara = document.createElement('p')
+      episodeNumPara.textContent = "Episode:"+items[i].episode
+
+      var episodeCharPara = document.createElement('p')
+      episodeCharPara.textContent = "EpisodeCharacter:"+items[i].characters
+
+      var episodeUrlPara = document.createElement('p')
+      episodeUrlPara.textContent = "EpisodeURL:"+items[i].url
+
+      cardBody.append(namePara,DatePara,episodeNumPara,episodeCharPara,episodeUrlPara)
+      card.append(cardBody)
+      displayResult.append(card)     
 
    }
 }
