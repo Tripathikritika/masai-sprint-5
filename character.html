@@ -3,17 +3,56 @@
     <head>
         <title>Character Page</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/f0bf29ac00.js" crossorigin="anonymous"></script>
 
+        <style>
+            .top{
+                height: 300px;
+                margin: auto;
+            }
+            .search-bar {
+                padding-top:10px;
+                margin-bottom: 15px;
+                font-size: 25px;
+                border-radius: 15px;
+                border: 1px solid black;
+                width: 100%;
+                padding-right: 15px;
+            }
+            .search-container{
+                position: relative;
+                width:50%;
+            }
+            .search-bar-img{
+                position: absolute;
+                right: 8px;
+                top: 10px;
+                font-size: 30px;
+            }
+
+        </style>
     </head>
-    <body class="bg-dark">
+    <body class=" mb-5 mt-5 pt-5">
+        <div class="container bg-white">
+            <div class="top d-flex justify-content-center bg-white align-items-center">
+                <div class="search-container">
+                    <input type="text" class="search-bar pl-2" placeholder="Search Single Character or Multiple Character">
+                    <i class="search-bar-img fas fa-search text-secondary "></i>
+                </div>
+            </div>
+        </div>
         <div class="container">
-            <nav class="navbar fixed-bottom navbar-light bg-light">
-                <a class="navbar-brand" href="home.html">Home</a>
-                <a class="navbar-brand" href="character.html">About the Character</a>
-                <a class="navbar-brand" href="episode.html">Episodes</a>
-                <a class="navbar-brand" href="memes.html">Memes</a>
-            </nav>
+            <div id="charResult"></div>
 
         </div>
+        <div class="container ">
+            <nav class="navbar fixed-top navbar-light bg-dark">
+                <a class="navbar-brand font-weight-bold text-light" href="index.html">Home</a>
+                <a class="navbar-brand font-weight-bold text-light" href="characters.html">About the Character</a>
+                <a class="navbar-brand font-weight-bold text-light" href="episode.html">Episodes</a>
+                <a class="navbar-brand font-weight-bold text-light" href="memes.html">Memes</a>
+            </nav>
+        </div>
+        <script type="text/javascript" src="character.js"></script>
     </body>
 </html>

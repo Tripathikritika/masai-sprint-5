@@ -1,11 +1,11 @@
 var query = ""
-var queryTwo = ""
 var activePage = 1
 window.onload=function(){
    var searchBar = document.querySelector('.search-container')
    searchBar.addEventListener('keyup',debouncer(1000,getSingleChar))
-   handleGet()
+   searchBar.addEventListener('dblclick',handleGet)
 }
+
 function debouncer(delay,callback){
    var debounce;
    return function(){
@@ -21,7 +21,7 @@ function debouncer(delay,callback){
 function handleGet(){
     //alert("pop")
    var xhr = new XMLHttpRequest()
-   xhr.open('GET', 'https://rickandmortyapi.com/api/character/?name='+query )
+   xhr.open('GET', 'https://rickandmortyapi.com/api/character/' )
    xhr.send()
    xhr.onload = function(){
       if(xhr.status === 200){
@@ -46,16 +46,16 @@ function AllCharacter(data){
 
    for(var i = 0 ; i < items.length ; i++){
       var card = document.createElement('div')
-      card.setAttribute('class','card m-2 pl-2 col-lg-5')
+      card.setAttribute('class','card col-lg-6')
 
       var cardRow = document.createElement('div')
       cardRow.setAttribute('class','row no-gutters')
 
       var cardCol = document.createElement('div')
-      cardCol.setAttribute('class','col-md-4')
+      cardCol.setAttribute('class','col-md-4 p-3')
       var  img = document.createElement('img')
       img.setAttribute('src',items[i].image)
-      img.setAttribute('class','card-img')
+      img.setAttribute('class','card-img img-fluid')
       
       cardCol.append(img)
 
@@ -63,18 +63,17 @@ function AllCharacter(data){
       cardBody.setAttribute('class','card-body col-md-8')
 
       var namePara = document.createElement('p')
-      namePara.textContent = "Name: "+items[i].name
+      namePara.textContent = items[i].name
+      namePara.style.fontWeight = 'bold'
 
       var DatePara = document.createElement('p')
-      DatePara.textContent = "Gender: "+items[i].gender
+      DatePara.textContent = items[i].status  +"\n"+ "-"+"\n" +  items[i].species
 
-      var statusPara = document.createElement('p')
-      statusPara.textContent = "Status: "+items[i].status
+      
+      var genderPara = document.createElement('p')
+      genderPara.textContent =  items[i].gender
 
-      var speciesPara = document.createElement('p')
-      speciesPara.textContent = "Species: "+items[i].species
-
-      cardBody.append(namePara,DatePara,statusPara,speciesPara)
+      cardBody.append(namePara,DatePara,genderPara)
       cardRow.append(cardCol,cardBody)
       card.append(cardRow)
       displayResult.append(card)     
@@ -108,13 +107,13 @@ function displaySingleChar(data){
 
    for(var i = 0 ; i < items.length ; i++){
       var card = document.createElement('div')
-      card.setAttribute('class','card m-2 pl-2 col-lg-5')
+      card.setAttribute('class','card pl-5 col-lg-6 ')
 
       var cardRow = document.createElement('div')
       cardRow.setAttribute('class','row no-gutters')
 
       var cardCol = document.createElement('div')
-      cardCol.setAttribute('class','col-md-4')
+      cardCol.setAttribute('class','col-md-4  p-3')
       var  img = document.createElement('img')
       img.setAttribute('src',items[i].image)
       img.setAttribute('class','card-img')
@@ -125,18 +124,15 @@ function displaySingleChar(data){
       cardBody.setAttribute('class','card-body col-md-8')
 
       var namePara = document.createElement('p')
-      namePara.textContent = "Name: "+items[i].name
+      namePara.textContent = items[i].name
 
       var DatePara = document.createElement('p')
-      DatePara.textContent = "Gender: "+items[i].gender
+      DatePara.textContent = items[i].status  +"\n"+ "-"+"\n" +  items[i].species
 
-      var statusPara = document.createElement('p')
-      statusPara.textContent = "Status: "+items[i].status
+      var genderPara = document.createElement('p')
+      genderPara.textContent = items[i].status
 
-      var speciesPara = document.createElement('p')
-      speciesPara.textContent = "Species: "+items[i].species
-
-      cardBody.append(namePara,DatePara,statusPara,speciesPara)
+      cardBody.append(namePara,DatePara,genderPara)
       cardRow.append(cardCol,cardBody)
       card.append(cardRow)
       displayResult.append(card)     
