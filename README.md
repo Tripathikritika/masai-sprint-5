@@ -1,13 +1,16 @@
 ### The Rick and Morty 
-
 This project was bootstrapped with XHR and API.
+
+### API Documentation https://rickandmortyapi.com/documentation/
 
 ### Flow of API
 The Project is All about the Famous Cartoon Character 
 Rick And Morty.The API Consist of following three Resources
-### API Documentation https://rickandmortyapi.com/documentation/
-### Character: Used to get all the characters.
-### Episode: Used to get all the episodes.
+
+### Character: 
+Used to get all the characters.
+### Episode:
+Used to get all the episodes.
 
 ### Structure of Project
 This Project has a Landing Page which takes us to the Home page
