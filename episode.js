@@ -1,4 +1,4 @@
-// var query = ''
+ var query = ''
 window.onload=function(){
    handleGet()
    var searchBar = document.querySelector('.search-container')
@@ -47,25 +47,26 @@ function getEpisode(data){
 
    for(var i = 0 ; i < items.length ; i++){
       var card = document.createElement('div')
-      card.setAttribute('class','card col-lg-3')
+      card.setAttribute('class','card my-1 col-lg-12')
 
       var cardBody = document.createElement('div')
       cardBody.setAttribute('class','card-body')
 
       var namePara = document.createElement('p')
-      namePara.textContent = "Name: "+items[i].name
+      namePara.innerHTML = "<strong>" + "Name: " +items[i].name + "</strong>"
 
       var DatePara = document.createElement('p')
-      DatePara.textContent = "Air Date: "+items[i].air_date
+      DatePara.innerHTML =  "<strong>" +  "Air Date: "+items[i].air_date + "</strong>"
+     
 
       var episodeNumPara = document.createElement('p')
-      episodeNumPara.textContent = "Episode: "+items[i].episode
+      episodeNumPara.innerHTML =  "<strong>" +  "Episode: "+items[i].episode +"</strong>"
 
       var episodeUrlPara = document.createElement('a')
       episodeUrlPara.setAttribute('class','card-link')
       episodeUrlPara.innerHTML = "EpisodeURL: " + "<a href= "+">" + items[i].url+ "</a>"
 
-      cardBody.append(namePara,DatePara,episodeNumPara,episodeUrlPara)
+      cardBody.append(episodeNumPara,namePara,DatePara,episodeUrlPara)
       card.append(cardBody)
       displayResult.append(card)     
 
@@ -73,6 +74,7 @@ function getEpisode(data){
 }
 function getSingelEpisode(){
    var xhr = new XMLHttpRequest()
+   
    xhr.open('GET', 'https://rickandmortyapi.com/api/episode/?episode='+query)
    xhr.send()
    xhr.onload = function(){
@@ -97,28 +99,28 @@ function singleEpisode(data){
 
    for(var i = 0 ; i < items.length ; i++){
       var card = document.createElement('div')
-      card.setAttribute('class','card m-3 col-lg-6')
+      card.setAttribute('class','card m-3 my-1 col-lg-12')
 
       var cardBody = document.createElement('div')
       cardBody.setAttribute('class','card-body')
 
       var namePara = document.createElement('p')
-      namePara.textContent = "Name: "+items[i].name
+      namePara.innerHTML = "<strong>" + "Name: " +items[i].name + "</strong>"
 
       var DatePara = document.createElement('p')
-      DatePara.textContent = "Air Date: "+items[i].air_date
+      DatePara.innerHTML =  "<strong>" +  "Air Date: "+items[i].air_date + "</strong>"
+     
 
       var episodeNumPara = document.createElement('p')
-      episodeNumPara.textContent = "Episode: "+items[i].episode
+      episodeNumPara.innerHTML =  "<strong>" +  "Episode: "+items[i].episode +"</strong>"
 
       var episodeUrlPara = document.createElement('a')
       episodeUrlPara.setAttribute('class','card-link')
       episodeUrlPara.innerHTML = "EpisodeURL: " + "<a href= "+">" + items[i].url+ "</a>"
 
-      cardBody.append(namePara,DatePara,episodeNumPara,episodeUrlPara)
+      cardBody.append(episodeNumPara,namePara,DatePara,episodeUrlPara)
       card.append(cardBody)
-      displayResult.append(card)     
-
+      displayResult.append(card)  
    }
 }
 
@@ -146,25 +148,26 @@ function nameEpisode(data){
 
    for(var i = 0 ; i < items.length ; i++){
       var card = document.createElement('div')
-      card.setAttribute('class','card m-3 col-lg-6')
+      card.setAttribute('class','card  my-1 col-lg-12')
 
       var cardBody = document.createElement('div')
-      cardBody.setAttribute('class','card-body')
+      cardBody.setAttribute('class','card-body ')
 
       var namePara = document.createElement('p')
-      namePara.textContent = "Name: "+items[i].name
+      namePara.innerHTML = "<strong>" + "Name: " +items[i].name + "</strong>"
 
       var DatePara = document.createElement('p')
-      DatePara.textContent = "Air Date: "+items[i].air_date
+      DatePara.innerHTML =  "<strong>" +  "Air Date: "+items[i].air_date + "</strong>"
+     
 
       var episodeNumPara = document.createElement('p')
-      episodeNumPara.textContent = "Episode: "+items[i].episode
+      episodeNumPara.innerHTML =  "<strong>" +  "Episode: "+items[i].episode +"</strong>"
 
       var episodeUrlPara = document.createElement('a')
       episodeUrlPara.setAttribute('class','card-link')
       episodeUrlPara.innerHTML = "EpisodeURL: " + "<a href= "+">" + items[i].url+ "</a>"
 
-      cardBody.append(namePara,DatePara,episodeNumPara,episodeUrlPara)
+      cardBody.append(episodeNumPara,namePara,DatePara,episodeUrlPara)
       card.append(cardBody)
       displayResult.append(card)     
 
