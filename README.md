@@ -28,16 +28,21 @@ Used to get all the locations.
 [<img align="left" alt="JavaScript" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />][jsplaylist]
 [<img align="left" alt="bootstrap" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/bootstrap/bootstrap.png" />][jsplaylist]
 
-### Structure of Project
+<br/>
+
+## Structure of Project
 
 This Project has a Landing Page which takes us to the Home page,
 Which has option search a single Character or show all characters
 and can also search for Episodes.
 It also has a page to look on some memes present on Rick and morty in social Media Sites.
 
+<br/>
+
 ## Screenshots
 
 <img src="./photos/ScreenShot.png" alt="Landing Page" />
+
 
 ## Installation
 
