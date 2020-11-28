@@ -21,6 +21,10 @@ Used to get all the episodes.
 
 Used to get all the locations.
 
+## Motivation
+
+The fifth sprint project done after completing fifth month @Masai School.
+
 ## Tech/framework
 
 [<img align="left" alt="HTML5" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />][webdevplaylist]
@@ -42,7 +46,6 @@ It also has a page to look on some memes present on Rick and morty in social Med
 ## Screenshots
 
 <img src="./photos/ScreenShot.png" alt="Landing Page" />
-
 
 ## Installation
 
